@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "A new file was created named 'hello'."
+touch hello
