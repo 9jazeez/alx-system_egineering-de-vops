@@ -1,0 +1,2 @@
+#!/bin/bash
+cp $(find ./ -name *.html) --target-directory = ../ -update
