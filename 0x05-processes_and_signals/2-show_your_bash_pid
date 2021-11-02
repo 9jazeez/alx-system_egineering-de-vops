@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# For getting all current processes and pattern with bash
+
+ps -faux | grep bash
