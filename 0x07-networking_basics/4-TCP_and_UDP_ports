@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This scripts displays listing ports
 # It shows only listing sockets with the PID and program it belongs
 sudo netstat -lp
