@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # Script to change localhost and block facebook
-echo "8.8.8.8	facebook.com" >> /etc/hosts
-grep -rl "127.0.0.2" /etc/hosts | xargs sed -i 's/127.0.0.2/127.0.0.1/g'
+cp etc/hosts hosts_cp
+echo "8.8.8.8	facebook.com" >> hosts_cp
+grep -rl "127.0.0.2" hosts_cp | xargs sed -i 's/127.0.0.2/127.0.0.1/g'
+cp hosts_cp etc/hosts
