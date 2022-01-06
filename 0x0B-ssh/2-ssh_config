@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Config ssh to refuse password on client side
+
+echo " Host *
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
+	PubKeyAuthentication yes
+" >> /etc/ssh/ssh_config 

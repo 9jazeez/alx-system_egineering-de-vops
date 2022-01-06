@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Connecting to user ubuntu on server 918-web-01
+# And using the private key identity file
+
+ssh ubuntu@918-web-01 -i ~/.ssh/school
