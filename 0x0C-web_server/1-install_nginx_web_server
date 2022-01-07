@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#This file installs nginx using apt
+#Then loads a Hello world from a html page
+#It also creates the file index.html
+
+apt-get update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+sudo mkdir -p /var/www/html
+chmod -R 755 /var/www
+
+echo "Hello World!" > /var/www/index.html
+
+if [ "$(pgrep -c nginx)" -le 0]; then
+	service nginx start
+else
+	service nginx restart
+fi
