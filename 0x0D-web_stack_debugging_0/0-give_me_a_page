@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#This file contains steps taken to debug a serve issue
+#The apache serve was not serving a page correctly
+
+
+#First the image was ran using docker container
+#docker run -p 8080:80 -d -it holbertonschool/265-0...
+
+#if docker was not started use sudo
+
+#use docker exec command to start apache if not running
+#docker exec -i service apache2 start
+
+sudo service apache2 start
