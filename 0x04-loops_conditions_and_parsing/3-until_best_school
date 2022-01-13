@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#This bash script prints "Best School" 10 times using until
+
+val=10
+until [ $val -lt 1 ]
+do
+	echo "Best School"
+	((val=val-1))
+done

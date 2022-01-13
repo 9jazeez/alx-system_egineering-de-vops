@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#This bash script prints "Best School" but not in 4 and 8 iter 
+
+val=1
+while [ $val -le 10 ]
+do
+	if [ $val -eq 8 ]
+	then
+		echo "good luck"
+	elif [ $val -eq 4 ]
+	then
+		echo "bad luck"
+	else
+		echo "Best School" 
+	fi
+	((val=val+1))
+done
