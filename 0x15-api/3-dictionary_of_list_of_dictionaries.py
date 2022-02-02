@@ -10,22 +10,26 @@ import json
 
 if __name__ == "__main__":
 
-    file_json = sys.argv[1] + ".json"
-    dict_f = dict()
-    list1 = []
+    dict_f = {}
 
     r = requests.request(
       'GET',
-      'https://jsonplaceholder.typicode.com/users/' +
-      sys.argv[1] + '/todos')
+      'https://jsonplaceholder.typicode.com/todos')
 
     r2 = requests.request(
        'GET',
-       'https://jsonplaceholder.typicode.com/users/')
+       'https://jsonplaceholder.typicode.com/users')
 
-    for i in r2.json():
-        print(i)
+    for user in r2.json():
+        list1 = []
+        for todo in r.json():
+            if user['id'] == todo['userId']:
+                dict_in = {}
+                dict_in['task'] = todo['title']
+                dict_in['completed'] = todo['completed']
+                dict_in['username'] = user['username']
+                list1.append(dict_in)
+        dict_f[user['id']] = list1
 
-
-    #with open(file_json, "w") as csv_f:
-        #json.dump(dict_f, csv_f)
+    with open('todo_all_employees.json', "w") as csv_f:
+        json.dump(dict_f, csv_f)
