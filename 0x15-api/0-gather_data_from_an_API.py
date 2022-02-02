@@ -20,7 +20,6 @@ if __name__ == "__main__":
        sys.argv[1])
 
     name = r2.json().get('name')
-    print(r2.json())
     done = 0
     undone = 0
     for i, a in enumerate(r.json()):
